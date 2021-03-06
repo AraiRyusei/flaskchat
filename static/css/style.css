@@ -30,6 +30,7 @@
   
   main {
     display: block;
+    margin: 30px 50px;
   }
   
   /**
@@ -359,9 +360,11 @@ body {
     background-color: #F3D1E5;
 }
 
+
 /* ヘッダー部分 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 header {
     background-color: #CE579B;
+    border-bottom: solid 5px #555555;
 }
 
 header h1 {
@@ -369,10 +372,9 @@ header h1 {
 }
 
 
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-/* ログインページ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 .container {
     display: flex;
     align-items: center;
@@ -383,29 +385,37 @@ header h1 {
 
 .menu {
     display: flex;
-    margin: 10px;
+    margin: 0 20px;
 }
 
-.menu p {
-    margin: 0;
+.menu a{
+    display: block;
     font-size: 20px;
-    padding: 15px 30px;
     width: 150px;
     text-align: center;
-    
+    padding: 20px 10px;
+    margin: 0 10px;
 }
+
+
 
 .menu p:hover{
     background-color: #C0D860;
     border-radius: 10px;
     transition: all .3s;
+    
 }
+
+
 
 .menu p a,h1{
     color: white;
 }
 
 
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ログインページ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .login {
     display: flex;
@@ -414,13 +424,84 @@ header h1 {
 }
 
 .loginForm {
-    margin: 40px;
+    margin: 60px;
 }
 
-.loginButton {
+.loginForm h2{
+    padding: 0 0 0 12px;
+}
+
+.loginForm input[type="text"]{
+    height: 50px;
+    width: 300px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: #555555 solid;
+}
+
+.loginForm input[type="submit"]{
+    height: 50px;
     width: 100%;
+    border-radius: 50px;
+    background-color: #CE579B;
+    border: 0px;
+    color: white;
+    font-size: 20px;
+}
+
+.loginForm input[type="submit"]:hover{
+    background-color: #C0D860;
+    color: #000;
+    transition: all .3s;
 }
 
 .login p {
-    margin: 2px;
+    margin: 10px;
 }
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ユーザー一覧 */
+
+
+.userList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.userCard{
+    position: relative;
+    display: flex;
+    width: 30%;
+    background-color: #CE579B;
+    color: white;
+    margin: 1%;
+    border-radius: 30px;
+}
+
+.userCard form{
+    position: absolute;
+    margin: auto;
+    top: 15px;
+    right: 25px;
+}
+
+.userCard input{
+    background-color: #42AAC7;
+    border: 0px;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 30px;
+    color: white;
+}
+
+.userCard input:hover{
+    background-color: #C0D860;
+    color: #000;
+    transition: all .3s;
+}
+.userName{
+    margin: 30px 0px 30px 25px;
+    font-size: 20px;
+}
+
+
