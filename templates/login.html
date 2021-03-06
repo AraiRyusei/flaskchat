@@ -1,27 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block content %}
+<div class="login">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <div class="loginForm">
+        <h3>アカウント登録</h3>
+        <form action="/regist" method="POST">
+            <p><input type="text" name="name" placeholder="Name"></p>
+            <p><input type="text" name="password" placeholder="Password"></p>
+            <input class="loginButton" type="submit" value="登録">
+        </form>
+    </div>
 
-<body>
-    <h3>ログイン</h3>
-    <form action="/login" method="POST">
-        名前<input type="text" name="name">
-        パスワード<input type="text" name="password">
-        <input type="submit" value="ログイン">
-    </form>
+    <div class="loginForm">
+        <form action="/login" method="POST">
+            <h3>ログイン</h3>
+            <p><input type="text" name="name" placeholder="Name"></p>
+            <p><input type="text" name="password" placeholder="Password"></p>
+            <input class="loginButton" type="submit" value="ログイン">
+        </form>
+    </div>
 
-    <h3>アカウント登録</h3>
-    <form action="/regist" method="POST">
-        名前<input type="text" name="name">
-        パスワード<input type="text" name="password">
-        <input type="submit" value="登録">
-    </form>
-</body>
 
-</html>
+
+
+</div>
+
+
+{% endblock %}
