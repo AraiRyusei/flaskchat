@@ -101,15 +101,13 @@ def chat_post(chatid):
 
 @app.route("/userlist")
 def userlist():
-    if "user_id" in session:
-        conn = sqlite3.connect('chattest.db')
-        c = conn.cursor()
-        c.execute("select id, name from user")
-        user_info = c.fetchall()
-        conn.close()
-        return render_template("userlist.html", tpl_user_info=user_info)
-    else:
-        redirect("/login")
+    conn = sqlite3.connect('chattest.db')
+    c = conn.cursor()
+    c.execute("select id, name from user")
+    user_info = c.fetchall()
+    conn.close()
+    return render_template("userlist.html", tpl_user_info=user_info)
+
 
 
 @app.route("/login")
