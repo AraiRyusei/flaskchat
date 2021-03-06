@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    </head>
     <link rel="stylesheet" href="/static/css/style.css">
     <title>FlaskChatSample</title>
 </head>
@@ -12,15 +14,13 @@
 <body>
     <header>
         <div class="container">
-            <h1>FlaskChatSample</h1>
+            <a href="/userlist"><h1>FlaskChatSample</h1></a>
             <div class="menu">
                 <p><a href="/login">ログイン</a></p>
                 <p><a href="/userlist">ユーザーリスト</a></p>
                 <p><a href="/chatroom">チャットルーム</a></p>
             </div>
-
         </div>
-
     </header>
     <main>
         {% block content %}
