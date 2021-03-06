@@ -359,9 +359,14 @@ body {
     background-color: #F3D1E5;
 }
 
+main{
+    padding: 20px 40px;
+}
+
 /* ヘッダー部分 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 header {
     background-color: #CE579B;
+    border-bottom: solid 5px #555555;
 }
 
 header h1 {
@@ -421,7 +426,11 @@ header h1 {
 }
 
 .loginForm {
-    margin: 40px;
+    margin: 60px;
+}
+
+.loginForm h2{
+    padding: 0 0 0 12px;
 }
 
 .loginForm input[type="text"]{
@@ -439,7 +448,7 @@ header h1 {
     background-color: #CE579B;
     border: 0px;
     color: white;
-    
+    font-size: 20px;
 }
 
 .loginForm input[type="submit"]:hover{
@@ -447,7 +456,6 @@ header h1 {
     color: #000;
     transition: all .3s;
 }
-
 
 .login p {
     margin: 10px;
