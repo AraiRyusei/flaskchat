@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ユーザー一覧</h1>
+    <a href="/logout">ログアウト</a>
+    <a href="/chatroom">あなたのチャットルームへ</a>
+    {% for user_info in tpl_user_info %}
+    <div style="border: 1px solid black;">
+        <p>{{user_info[1]}}</p>
+        <form action="/chatroom/{{user_info[0]}}" method="POST">
+            <input type="submit" value="チャットする">
+        </form>
+    </div>
+    {% endfor %}
+
+</body>
+
+</html>
