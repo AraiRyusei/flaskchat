@@ -1,5 +1,47 @@
-.chatbox {
-    height: 300px;
-    background-color: dimgrey;
-    overflow: scroll;
+body {
+    background-color: #F3D1E5;
+}
+
+header {
+    background-color: #CE579B;
+}
+
+header h1 {
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+
+}
+
+.menu p {
+    font-size: 20px;
+    padding: 10px 30px;
+}
+
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.loginForm {
+    margin: 40px;
+}
+
+.loginButton {
+    width: 100%;
+}
+
+.login p {
+    margin: 2px;
 }
