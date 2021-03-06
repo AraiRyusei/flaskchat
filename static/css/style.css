@@ -369,10 +369,9 @@ header h1 {
 }
 
 
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-/* ログインページ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 .container {
     display: flex;
     align-items: center;
@@ -383,29 +382,37 @@ header h1 {
 
 .menu {
     display: flex;
-    margin: 10px;
+    margin: 0 20px;
 }
 
-.menu p {
-    margin: 0;
+.menu a{
+    display: block;
     font-size: 20px;
-    padding: 15px 30px;
     width: 150px;
     text-align: center;
-    
+    padding: 20px 10px;
+    margin: 0 10px;
 }
+
+
 
 .menu p:hover{
     background-color: #C0D860;
     border-radius: 10px;
     transition: all .3s;
+    
 }
+
+
 
 .menu p a,h1{
     color: white;
 }
 
 
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* ログインページ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .login {
     display: flex;
@@ -417,10 +424,31 @@ header h1 {
     margin: 40px;
 }
 
-.loginButton {
-    width: 100%;
+.loginForm input[type="text"]{
+    height: 50px;
+    width: 300px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: #555555 solid;
 }
 
+.loginForm input[type="submit"]{
+    height: 50px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: #CE579B;
+    border: 0px;
+    color: white;
+    
+}
+
+.loginForm input[type="submit"]:hover{
+    background-color: #C0D860;
+    color: #000;
+    transition: all .3s;
+}
+
+
 .login p {
-    margin: 2px;
+    margin: 10px;
 }
