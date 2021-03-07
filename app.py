@@ -13,15 +13,18 @@ def jump():
 
 @app.route("/chatroom")
 def chatroom_get():
-    my_id = session["user_id"]
-    # ここにチャットルーム一覧をDBからとって、表示するプログラム
-    conn = sqlite3.connect('chattest.db')
-    c = conn.cursor()
-    c.execute(
-        "select id, room from chat where user_id1 = ? or user_id2 = ?", (my_id, my_id))
-    chat_list = c.fetchall()
+    if "user_id" in session:
+        my_id = session["user_id"]
+        # ここにチャットルーム一覧をDBからとって、表示するプログラム
+        conn = sqlite3.connect('chattest.db')
+        c = conn.cursor()
+        c.execute(
+            "select id, room from chat where user_id1 = ? or user_id2 = ?", (my_id, my_id))
+        chat_list = c.fetchall()
 
-    return render_template("/chatroom.html", tpl_chat_list=chat_list)
+        return render_template("/chatroom.html", tpl_chat_list=chat_list)
+    else:
+        return redirect("/login")
 
 
 @app.route("/chatroom/<int:other_id>", methods=["POST"])
@@ -117,23 +120,16 @@ def login_get():
 
 @app.route("/login", methods=["POST"])
 def login():
-    # ブラウザから送られてきたデータを受け取る
     name = request.form.get("name")
     password = request.form.get("password")
-
-    # ブラウザから送られてきた name ,password を userテーブルに一致するレコードが
-    # 存在するかを判定する。レコードが存在するとuser_idに整数が代入、存在しなければ nullが入る
     conn = sqlite3.connect('chattest.db')
     c = conn.cursor()
     c.execute(
         "select id from user where name = ? and password = ?", (name, password))
     user_id = c.fetchone()
     conn.close()
-    # DBから取得してきたuser_id、ここの時点ではタプル型
     print(type(user_id))
-    # user_id が NULL(PythonではNone)じゃなければログイン成功
     if user_id is None:
-        # ログイン失敗すると、ログイン画面に戻す
         return render_template("login.html")
     else:
         session['user_id'] = user_id[0]
@@ -155,11 +151,9 @@ def regist():
 @app.route("/logout")
 def logout():
     session.pop('user_id', None)
-    # ログアウト後はログインページにリダイレクトさせる
     return redirect("/login")
 
 
-    # __name__ というのは、自動的に定義される変数で、現在のファイル(モジュール)名が入ります。 ファイルをスクリプトとして直接実行した場合、 __name__ は __main__ になります。
+    
 if __name__ == "__main__":
-    # Flask が持っている開発用サーバーを、実行します。
     app.run(debug=True)

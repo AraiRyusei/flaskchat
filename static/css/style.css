@@ -504,4 +504,47 @@ header h1 {
     font-size: 20px;
 }
 
+/* ////////////////////////////////////////////////////////// */
 
+/* チャットルーム一覧///////////////////////////////////////// */
+
+.roomList{
+  display: flex;
+  flex-wrap: wrap;
+}
+.roomCard{
+  position: relative;
+  display: flex;
+  width: 30%;
+  background-color: #CE579B;
+  color: white;
+  margin: 1%;
+  border-radius: 30px;
+}
+
+.roomCard form{
+  position: absolute;
+  margin: auto;
+  top: 15px;
+  right: 25px;
+}
+
+.roomCard input{
+  background-color: #42AAC7;
+  border: 0px;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 30px;
+  color: white;
+}
+
+.roomCard input:hover{
+  background-color: #C0D860;
+  color: #000;
+  transition: all .3s;
+}
+.roomName{
+  margin: 30px 0px 30px 25px;
+  font-size: 20px;
+}
+/* ////////////////////////////////////////////////////////// */
