@@ -62,6 +62,7 @@ def chatroom_post(other_id):
 
 @app.route("/chat/<int:chatid>")
 def chat_get(chatid):
+    my_id = session["user_id"]
     # ここにチャットをDBからとって、表示するプログラム
     conn = sqlite3.connect('chattest.db')
     c = conn.cursor()
@@ -75,7 +76,7 @@ def chat_get(chatid):
     c.execute("select room from chat where id = ?", (chatid,))
     room_name = c.fetchone()[0]
     c.close()
-    return render_template("chat.html", chat_list=chat_info, link_chatid=chatid, tpl_room_name=room_name)
+    return render_template("chat.html", chat_list=chat_info, link_chatid=chatid, tpl_room_name=room_name,tpl_my_id=my_id)
 
 
 @app.route("/chat/<int:chatid>", methods=["POST"])
@@ -156,4 +157,4 @@ def logout():
 
     
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
