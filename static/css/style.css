@@ -400,7 +400,7 @@ header h1 {
 
 
 .menu p:hover{
-    background-color: #C0D860;
+    background-color: #A4C520;
     border-radius: 10px;
     transition: all .3s;
     
@@ -450,7 +450,7 @@ header h1 {
 }
 
 .loginForm input[type="submit"]:hover{
-    background-color: #C0D860;
+    background-color: #A4C520;
     color: #000;
     transition: all .3s;
 }
@@ -495,7 +495,7 @@ header h1 {
 }
 
 .userCard input:hover{
-    background-color: #C0D860;
+    background-color: #A4C520;
     color: #000;
     transition: all .3s;
 }
@@ -504,4 +504,121 @@ header h1 {
     font-size: 20px;
 }
 
+/* ////////////////////////////////////////////////////////// */
+
+/* チャットルーム一覧///////////////////////////////////////// */
+
+.roomList{
+  display: flex;
+  flex-wrap: wrap;
+}
+.roomCard{
+  position: relative;
+  display: flex;
+  width: 30%;
+  background-color: #CE579B;
+  color: white;
+  margin: 1%;
+  border-radius: 30px;
+}
+
+.roomCard form{
+  position: absolute;
+  margin: auto;
+  top: 15px;
+  right: 25px;
+}
+
+.roomCard input{
+  background-color: #42AAC7;
+  border: 0px;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 30px;
+  color: white;
+}
+
+.roomCard input:hover{
+  background-color: #A4C520;
+  color: #000;
+  transition: all .3s;
+}
+.roomName{
+  margin: 30px 0px 30px 25px;
+  font-size: 20px;
+}
+/* ////////////////////////////////////////////////////////// */
+
+/* チャットページ */
+
+.chatBox{
+  position: relative;
+  padding: 30px;
+  border: #CE579B 4px solid ;
+  border-radius: 10px;
+  background-color: #eeeeee;
+  
+  
+}
+
+.chatMessage{
+  padding: 10px;
+  margin-bottom: 20px;
+  overflow: auto;
+  height: 600px;
+}
+
+
+
+
+.fromText{
+  text-align: right;
+}
+
+.chatBox input[type="text"]{
+  box-shadow: 2px 2px inset rgb(119, 119, 119);
+  border: 0px;
+  width: 70%;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.chatBox input[type="submit"]{
+  margin-left: 10px;
+  width: 20%;
+  height: 50px;
+  border-radius: 20px;
+  border: 0px;
+  background-color: #CE579B;
+  color: white;
+  font-size: 20px;
+}
+
+.chatBox input[type="submit"]:hover{
+  border: 3px solid #CE579B;
+  color: #CE579B;
+  background-color: white;
+  transition: all .3s;
+}
+
+
+
+.chatBox p span{
+  display: inline-block;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 50%;
+}
+
+.fromText span{
+  background-color: #A4C520;
+  color: white;
+}
+
+.toText span{
+  background-color: #42AAC7;
+  color: white;
+}
 
